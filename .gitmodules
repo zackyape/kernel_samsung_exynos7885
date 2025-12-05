@@ -1,6 +1,6 @@
 [submodule "KernelSU"]
 	path = KernelSU
-	url = https://github.com/rifsxd/KernelSU-Next
+	url = https://github.com/SukiSU-Ultra/SukiSU-Ultra.git
 [submodule "AnyKernel3"]
 	path = AnyKernel3
 	url = https://github.com/Roynas-Android-Playground/kernel_packaging_anykernel3
