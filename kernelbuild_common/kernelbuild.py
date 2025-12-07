@@ -150,7 +150,12 @@ class KernelBuild:
         ]
         maybeCrossComp = self.toolchaincls.cross_compile_arg(self.arch)
         if maybeCrossComp:
-            common_make += maybeCrossComp
+            if isinstance(maybeCrossComp, str):
+                # Kalau toolchain balikin string tunggal
+                common_make.append(maybeCrossComp)
+            else:
+                # Kalau sudah list[str]
+                common_make += maybeCrossComp
         common_make += self.additionalMakeArgs()
         make_defconfig: "list[str]" = []
         make_defconfig += common_make
