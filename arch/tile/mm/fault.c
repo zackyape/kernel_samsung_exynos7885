@@ -704,7 +704,7 @@ static inline void __do_page_fault(struct pt_regs *regs, int fault_num,
 {
 	int is_page_fault;
 
-#ifdef CONFIG_KPROBES
+#if defined(CONFIG_KPROBES) && 0
 	/*
 	 * This is to notify the fault handler of the kprobes.  The
 	 * exception code is redundant as it is also carried in REGS,

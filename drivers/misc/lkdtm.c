@@ -929,7 +929,7 @@ static int __init lkdtm_module_init(void)
 		return -ENODEV;
 	}
 
-#ifdef CONFIG_KPROBES
+#if defined(CONFIG_KPROBES) && 0
 	n_debugfs_entries = ARRAY_SIZE(crash_entries);
 #endif
 

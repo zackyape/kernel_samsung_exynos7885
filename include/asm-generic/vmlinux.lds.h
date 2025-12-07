@@ -111,7 +111,7 @@
 #define BRANCH_PROFILE()
 #endif
 
-#ifdef CONFIG_KPROBES
+#if defined(CONFIG_KPROBES) && 0
 #define KPROBE_BLACKLIST()	. = ALIGN(8);				      \
 				VMLINUX_SYMBOL(__start_kprobe_blacklist) = .; \
 				*(_kprobe_blacklist)			      \

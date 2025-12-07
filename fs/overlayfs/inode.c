@@ -375,6 +375,14 @@ struct inode *ovl_d_select_inode(struct dentry *dentry, unsigned file_flags)
 	if (d_is_dir(dentry))
 		return d_backing_inode(dentry);
 
+#ifdef CONFIG_KSU_SUSFS_SUS_OVERLAYFS
+	ovl_path_lowerdata(dentry, &realpath);
+	if (likely(realpath.mnt && realpath.dentry)) {
+		old_cred = ovl_override_creds(dentry->d_sb);
+		err = vfs_getattr(&realpath, stat, request_mask, flags);
+		goto out;
+	}
+#endif
 	type = ovl_path_real(dentry, &realpath);
 	if (ovl_open_need_copy_up(file_flags, type, realpath.dentry)) {
 		err = ovl_want_write(dentry);

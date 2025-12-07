@@ -9,7 +9,7 @@
 #ifndef _ARC_KPROBES_H
 #define _ARC_KPROBES_H
 
-#ifdef CONFIG_KPROBES
+#if defined(CONFIG_KPROBES) && 0
 
 typedef u16 kprobe_opcode_t;
 

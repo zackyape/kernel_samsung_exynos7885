@@ -557,7 +557,7 @@ unsigned long read_word_at_a_time(const void *addr)
 })
 
 /* Ignore/forbid kprobes attach on very low level functions marked by this attribute: */
-#ifdef CONFIG_KPROBES
+#if defined(CONFIG_KPROBES) && 0
 # define __kprobes	__attribute__((__section__(".kprobes.text")))
 # define nokprobe_inline	__always_inline
 #else

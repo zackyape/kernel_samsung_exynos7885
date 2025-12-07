@@ -1,7 +1,7 @@
 #ifndef __ASM_SH_KPROBES_H
 #define __ASM_SH_KPROBES_H
 
-#ifdef CONFIG_KPROBES
+#if defined(CONFIG_KPROBES) && 0
 
 #include <linux/types.h>
 #include <linux/ptrace.h>

@@ -336,7 +336,7 @@ kgdb_notify(struct notifier_block *self, unsigned long cmd, void *ptr)
 	struct die_args *args = (struct die_args *)ptr;
 	struct pt_regs *regs = args->regs;
 
-#ifdef CONFIG_KPROBES
+#if defined(CONFIG_KPROBES) && 0
 	/*
 	 * Return immediately if the kprobes fault notifier has set
 	 * DIE_PAGE_FAULT.
