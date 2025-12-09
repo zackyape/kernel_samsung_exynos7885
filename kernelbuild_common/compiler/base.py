@@ -35,5 +35,5 @@ class CompilerBase:
 
     def cross_compile_arg(self, arch: str):
         if platform.machine() == arch:
-            return None
-        return f'CROSS_COMPILE={self._cross_compile_arg(arch)}'
+            return []
+        return [f'CROSS_COMPILE={self._cross_compile_arg(arch)}']
